@@ -27,7 +27,15 @@ apply plugin: 'kotlin-android'
 android {
     namespace 'com.example.imagegallerysaver'
     compileSdkVersion 34
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+         coreLibraryDesugaringEnabled true
+    }
 
+    kotlinOptions {
+        jvmTarget = '17'  // Update this to match Java version
+    }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
