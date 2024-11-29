@@ -27,15 +27,12 @@ apply plugin: 'kotlin-android'
 android {
     namespace 'com.example.imagegallerysaver'
     compileSdkVersion 30
-    // compileOptions {
-    //     sourceCompatibility JavaVersion.VERSION_17
-    //     targetCompatibility JavaVersion.VERSION_17
-    //      coreLibraryDesugaringEnabled true
-    // }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        
+    }
 
-    // kotlinOptions {
-    //     jvmTarget = '17'  // Update this to match Java version
-    // }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -46,6 +43,10 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+}
+
+kotlin{
+    jvmToolchain(8)
 }
 
 dependencies {
